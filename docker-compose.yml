@@ -1,0 +1,37 @@
+version: '3.4'
+
+networks:
+  dockerapi-dev:
+    driver: bridge 
+
+services:
+  room-mapping-ai:
+    image: ${DOCKER_REGISTRY-}roommappingai
+    build:
+      context: .
+      dockerfile: room-mapping-ai/Dockerfile
+    ports:
+      - "5000:80"
+    depends_on:
+      - postgres_image
+    networks:
+      - dockerapi-dev  
+    
+  postgres_image:
+    image: ankane/pgvector
+    environment:
+      - POSTGRES_USER=roommapping-user
+      - POSTGRES_PASSWORD=roommapping-password
+      - POSTGRES_DB=room-mapping
+    ports:
+      - "5432:5432"
+    restart: always
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+      - ./dbscripts/seed.sql:/docker-entrypoint-initdb.d/seed.sql:ro
+    networks:
+      - dockerapi-dev 
+
+    
+volumes:
+  dbdata: 
