@@ -74,7 +74,7 @@ Small distances suggest high relatedness and large distances suggest low related
 
 > To stop and remove containers: `docker-compose down --remove-orphans`
 
-![hippo](https://media3.giphy.com/media/aUovxH8Vf9qDu/giphy.gif)
+![Installation](https://raw.githubusercontent.com/brunonuzzi/room-mapping-ai/master/images/running_project.gif)
 
 ## Usage
 
@@ -167,7 +167,7 @@ The database will generate the following results
 | 5   | Mallorca Rocks | Royal Executive Suite | 2023-03-28  | Serenity Suite   | 0.12737531341984398 |
 | 3   | Mallorca Rocks | Garden Terrace Room   | 2023-03-28  | Serenity Suite   | 0.1471648253749488  |
 
-> For a better understanding of how seeding is done,you can check the [seed.sql](https://github.com/brunonuzzi/room-mapping-ai) file
+> For a better understanding of how seeding is done,you can check the [seed.sql](https://github.com/brunonuzzi/room-mapping-ai/blob/master/dbscripts/seed.sql) file
 
 ## Debugging on Visual Studio
 
@@ -176,6 +176,8 @@ related to the web api in order to avoid porting conflicts.
 
 Once the containers are removed , just open the `room-mapping-ai.sln` on Visual Studio and
 launch the docker compose.
+
+![Debug](https://raw.githubusercontent.com/brunonuzzi/room-mapping-ai/master/images/debug.jpg)
 
 The web api should launch and the debugger will be attached.
 
