@@ -24,7 +24,7 @@ It then uses native search functionality in PostgreSQL to find potential matches
 
 > Both the Web Api and the Postgres database run in containers, there is no need to install anything apart from docker.
 
-> The model used for calculated the embedding on OpenIA side is: `AdaTextEmbedding`
+> The model used for calculating the embedding on OpenIA side is: `AdaTextEmbedding`
 
 ## What are embeddings
 
@@ -58,7 +58,7 @@ Small distances suggest high relatedness and large distances suggest low related
 
 3. Navigate to the project directory: `cd room-mapping-ai`
 
-4. Replace room-mapping-ai/appsettings.json with you own open api key.
+4. Replace room-mapping-ai/appsettings.json with your own open api key.
 
 ```json
 "OpenAI": {
@@ -70,7 +70,7 @@ Small distances suggest high relatedness and large distances suggest low related
 
 5. Run the Docker Compose: `docker-compose up`
 
-6. Navigate to http://localhost:8000/swagger
+6. Navigate to http://localhost:5000/swagger/index.html
 
 > To stop and remove containers: `docker-compose down --remove-orphans`
 
